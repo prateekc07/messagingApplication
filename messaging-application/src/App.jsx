@@ -31,14 +31,14 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: < NotFoundPage />
+    element: <NotFoundPage />
   }
 ]);
 
 function App() {
   return (
     <>
-      < RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
   );
 }

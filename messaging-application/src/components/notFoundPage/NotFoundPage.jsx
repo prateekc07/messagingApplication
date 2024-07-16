@@ -1,11 +1,34 @@
-import React from 'react'
+import React from 'react';
+import './notFoundStyle.css';
 
 function NotFoundPage() {
+
   return (
-    <div>
-      <h1>This is Not found page.</h1>
+    <div className='notFound'>
+      <div className="stage">
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default NotFoundPage;

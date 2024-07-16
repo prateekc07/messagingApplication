@@ -12,8 +12,8 @@ function LoginComponent() {
   let [password, setPassword] = useState("");
 
   // States used to store that the email or password is correct or not.
-  let [isEmailCorrect, setIsEmailCorrect] = useState(null);
-  let [isPasswordCorrect, setIsPasswordCorrect] = useState(null);
+  let [isEmailCorrect, setIsEmailCorrect] = useState(true);
+  let [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
 
   // Email validation method
   let handleEmail = () => {
