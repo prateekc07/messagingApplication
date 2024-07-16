@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import OtpInput from "./OtpInput";
 
@@ -7,6 +7,12 @@ function OtpComponent() {
   useEffect(() => {
     setIsLoginPage(false);
   }, []);
+
+  let [otp, setOtp] = useState("");
+
+  let handleVerify = () => {
+    console.log(otp);
+  }
 
 
   return (
@@ -18,7 +24,7 @@ function OtpComponent() {
         A OneTimePassword has been sent to your registered email.
       </div>
       <div className="otp my-5">
-        <OtpInput />
+        <OtpInput setOtp={setOtp} />
       </div>
       <div className="resendOtp text-xl font-semibold text-gray-600 mb-3">
         {"Didn't get the code?"}
@@ -30,7 +36,10 @@ function OtpComponent() {
         <span className="text-lg">Entered incorrect Otp!</span>
       </div>
       <div className="verifyOtpButtom">
-        <button className="bg-gradient-to-br from-gradientPurple to-gradientBlue text-white px-10 py-1 text-2xl rounded-3xl mb-2 hover:text-gray-200 active:text-gray-100">
+        <button
+          className="bg-gradient-to-br from-gradientPurple to-gradientBlue text-white px-10 py-1 text-2xl rounded-3xl mb-2 hover:text-gray-200 active:text-gray-100"
+          onClick={handleVerify}
+        >
           Verify
         </button>
       </div>
