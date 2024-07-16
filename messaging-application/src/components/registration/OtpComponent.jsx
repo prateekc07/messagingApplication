@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useOutletContext } from "react-router-dom";
+import OtpInput from "./OtpInput";
 
 function OtpComponent() {
   let [isLoginPage, setIsLoginPage] = useOutletContext();
@@ -17,26 +18,7 @@ function OtpComponent() {
         A OneTimePassword has been sent to your registered email.
       </div>
       <div className="otp my-5">
-        <input
-          className="border border-gray-400 w-10 h-10 mx-1 rounded-lg text-xl text-center outline-none text-gray-600"
-          type="text"
-          maxLength={1}
-        />
-        <input
-          className="border border-gray-400 w-10 h-10 mx-1 rounded-lg text-xl text-center outline-none text-gray-600"
-          type="text"
-          maxLength={1}
-        />
-        <input
-          className="border border-gray-400 w-10 h-10 mx-1 rounded-lg text-xl text-center outline-none text-gray-600"
-          type="text"
-          maxLength={1}
-        />
-        <input
-          className="border border-gray-400 w-10 h-10 mx-1 rounded-lg text-xl text-center outline-none text-gray-600"
-          type="text"
-          maxLength={1}
-        />
+        <OtpInput />
       </div>
       <div className="resendOtp text-xl font-semibold text-gray-600 mb-3">
         {"Didn't get the code?"}
