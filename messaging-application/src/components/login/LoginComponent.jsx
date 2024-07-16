@@ -68,7 +68,7 @@ function LoginComponent() {
   return (
     <>
       <div className="loginForm text-center pt-4">
-        <div className="loginHeading text-lg text-cyan-800 my-3">
+        <div className="loginHeading text-xl font-semibold text-cyan-800 my-3">
           Sign In Here
         </div>
         <div className="email">

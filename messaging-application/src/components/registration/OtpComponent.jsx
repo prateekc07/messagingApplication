@@ -17,7 +17,7 @@ function OtpComponent() {
 
   return (
     <div className="text-center mt-2">
-      <div className="heading text-2xl font-semibold py-2 text-cyan-900">
+      <div className="heading text-xl font-semibold py-2 text-cyan-900">
         Verify Otp
       </div>
       <div className="otpText text-[1.25rem] text-cyan-700">

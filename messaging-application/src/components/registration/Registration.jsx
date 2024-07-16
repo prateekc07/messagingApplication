@@ -62,7 +62,7 @@ function Registration() {
   return (
     <>
       <div className="signUpForm ml-16">
-        <div className="registrationHeading text-lg text-cyan-800 my-3">
+        <div className="registrationHeading text-xl font-semibold text-cyan-800 my-3">
           Sign Up details
         </div>
         <div className="name">
