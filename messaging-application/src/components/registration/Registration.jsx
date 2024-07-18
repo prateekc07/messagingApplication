@@ -53,7 +53,7 @@ function Registration() {
 
   let navigate = useNavigate();
 
-  let handleSignUp = () => {
+  let handleSignUp = async () => {
     if (name !== "" && isEmailCorrect && isPasswordCorrect && termAndConditions) {
       navigate("/verifyOtp");
     }
@@ -61,8 +61,8 @@ function Registration() {
 
   return (
     <>
-      <div className="signUpForm ml-16">
-        <div className="registrationHeading text-xl font-semibold text-cyan-800 my-3">
+      <div className="signUpForm ml-7 md:ml-10 lg:ml-16">
+        <div className="registrationHeading text-xl font-semibold text-cyan-800">
           Sign Up details
         </div>
         <div className="name">
@@ -73,7 +73,7 @@ function Registration() {
             title="Capitalize first letter of your FirstName and LastName."
             onChange={(e) => setName(e.target.value)}
             id="userName"
-            className="border bg-cyan-50 w-[80%] h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-2"
+            className="border bg-cyan-50 w-[90%] lg:w-[80%] h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-1.5"
             placeholder="Name"
           />
         </div>
@@ -85,7 +85,7 @@ function Registration() {
             onChange={(e) => setEmail(e.target.value)}
             className={`border ${
               isEmailCorrect ? "" : "border-red-600"
-            } bg-cyan-50 w-[80%] h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-2`}
+            } bg-cyan-50 w-[90%] lg:w-[80%] h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-1.5`}
             id="userEmail"
             placeholder="Email"
           />
@@ -98,24 +98,27 @@ function Registration() {
             onChange={(e) => setPassword(e.target.value)}
             className={`border ${
               isPasswordCorrect ? "" : "border-red-600"
-            } bg-cyan-50 w-[80%] h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-2`}
+            } bg-cyan-50 w-[90%] lg:w-[80%] h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-1.5`}
             placeholder="Password"
             id="userPassword"
           />
         </div>
         <div className="termsConditions">
-          <input 
+          <input
             type="checkbox"
             onClick={() => setTermAndConditions((prev) => !prev)}
-            name="termsConditions" 
-            id="t&c" 
+            name="termsConditions"
+            id="t&c"
           />{" "}
-          <span className="text-cyan-800">
+          <span className="text-cyan-800 text-[0.8rem] lg:text-[1rem]">
             I agree with the terms and conditions.
           </span>
         </div>
-        <div className="signUpButton text-center my-5 -ml-16">
-          <button onClick={handleSignUp} className="text-lg py-1 px-28 rounded-2xl bg-gradient-to-br from-gradientPurple to-gradientBlue text-white font-semibold hover:text-gray-200 active:text-gray-100">
+        <div className="signUpButton text-center my-2 -ml-7 md:-ml-10 lg:-ml-16">
+          <button
+            onClick={handleSignUp}
+            className="text-lg py-1 px-20 lg:px-28 rounded-2xl bg-gradient-to-br from-gradientPurple to-gradientBlue text-white font-semibold hover:text-gray-200 active:text-gray-100"
+          >
             SignUp
           </button>
         </div>

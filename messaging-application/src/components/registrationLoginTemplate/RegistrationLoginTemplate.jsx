@@ -15,7 +15,7 @@ function RegistrationLoginTemplate() {
 
   return (
     <section
-      className="registrationLoginBox flex w-[70%] h-[70vh] mx-auto mt-28 rounded-xl"
+      className="registrationLoginBox flex w-[90%] md:w-[80%] xl:w-[70%] mx-auto mt-20 rounded-xl"
       style={{ boxShadow: "0px 0px 15px #8c8c8c" }}
     >
       <div className="registrationLoginTemplate w-[50%] bg-gradient-to-br from-gradientPurple to-gradientBlue flex flex-col items-center justify-around rounded-l-xl">
@@ -31,7 +31,7 @@ function RegistrationLoginTemplate() {
             CHAT FUSION
           </div>
         </div>
-        <div className="slogan text-white font-semibold text-xl">
+        <div className="slogan text-white text-center font-semibold text-xl">
           Share your smile with this world and Find Friends.
         </div>
         <div className="smileLogo">
@@ -40,7 +40,7 @@ function RegistrationLoginTemplate() {
       </div>
       <div className="registrationLoginForm w-[50%] rounded-r-xl flex flex-col justify-center">
         <div className="flex justify-between">
-          <div className="greeting text-cyan-500 text-8xl mb-3 ml-10">
+          <div className="greeting text-cyan-500 text-6xl md:text-7xl lg:text-8xl mb-3 ml-10">
             Hello!
           </div>
           <div className="backToLogin mr-4 mt-2 text-3xl text-blue-900">
@@ -57,20 +57,20 @@ function RegistrationLoginTemplate() {
             </Link>
           </div>
         </div>
-        <div className="signSection h-[42vh]">
+        <div className="signSection h-[43vh]">
           <Outlet context={[isLoginPage, setIsLoginPage]} />
         </div>
         <div className="oauthCredLogin">
           <div className="oauthHeading flex justify-center items-center">
-            <div className="leftLine border-b-2 border-black w-44"></div>
-            <div className="authSection text-cyan-950 font-semibold text-lg px-3">
+            <div className="leftLine border-b-2 border-black w-[10.5vw] lg:w-[12vw] xl:w-36 2xl:w-44"></div>
+            <div className="authSection text-cyan-950 font-semibold lg:text-lg px-3">
               or connect with
             </div>
-            <div className="rightLine border-b-2 border-black w-44"></div>
+            <div className="rightLine border-b-2 border-black w-[10.5vw] lg:w-[12vw] xl:w-36 2xl:w-44"></div>
           </div>
           <div className="oauthProviders flex justify-around">
             <div className="gmail bg-yellow-300 text-white rounded-2xl my-4">
-              <button className="rounded-2xl py-1 px-14 text-lg flex items-center">
+              <button className="rounded-2xl py-1 px-4 lg:px-8 xl:px-14 lg:text-lg flex items-center">
                 <span className="pr-2">
                   <img src={GmailLogo} width={25} alt="" />
                 </span>
@@ -78,7 +78,7 @@ function RegistrationLoginTemplate() {
               </button>
             </div>
             <div className="facebook bg-blue-400 text-white rounded-2xl my-4">
-              <button className="rounded-2xl py-1 px-14 text-lg flex items-center">
+              <button className="rounded-2xl py-1 px-4 lg:px-8 xl:px-14 lg:text-lg flex items-center">
                 <span className="pr-2">
                   <img src={FacebookLogo} width={25} alt="" />
                 </span>
