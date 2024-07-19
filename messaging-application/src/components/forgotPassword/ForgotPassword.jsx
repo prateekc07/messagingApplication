@@ -56,7 +56,7 @@ function ForgotPassword() {
         </span>
       </div>
       <div className="submitBtn">
-        <button onClick={checkEmail} className='bg-gradient-to-br from-gradientPurple to-gradientBlue px-12 rounded-3xl py-1 text-white text-2xl'>Check</button>
+        <button onClick={checkEmail} className='bg-gradient-to-br from-gradientPurple to-gradientBlue px-12 rounded-3xl py-1 text-white text-2xl'>Forgot</button>
       </div>
     </div>
   );
