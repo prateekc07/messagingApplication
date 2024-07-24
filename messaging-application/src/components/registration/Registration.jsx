@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useOutletContext } from "react-router-dom";
+import { userRegistration } from "../../services/user-authentication-service";
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 function Registration() {
   let [isLoginPage, setIsLoginPage] = useOutletContext();
@@ -15,6 +17,7 @@ function Registration() {
   // States used to store that the email or password is correct or not.
   let [isEmailCorrect, setIsEmailCorrect] = useState(true);
   let [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
+  let [showPassword, setShowPassword] = useState(false);
 
   // Email validation method
   let handleEmail = () => {
@@ -22,11 +25,9 @@ function Registration() {
     if (email === "") {
       setIsEmailCorrect(true);
     } else if (emailRegExp.test(email)) {
-      console.log(true);
       setIsEmailCorrect(true);
     } else {
       setIsEmailCorrect(false);
-      console.log(false);
     }
   };
 
@@ -55,7 +56,13 @@ function Registration() {
 
   let handleSignUp = async () => {
     if (name !== "" && isEmailCorrect && isPasswordCorrect && termAndConditions) {
-      navigate("/verifyOtp");
+      // navigate("/verifyOtp");
+      let user = {
+        name: name,
+        email: email,
+        password: password
+      }
+      userRegistration(user);
     }
   }
 
@@ -90,9 +97,9 @@ function Registration() {
             placeholder="Email"
           />
         </div>
-        <div className="password">
+        <div className="password flex items-center">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -102,6 +109,17 @@ function Registration() {
             placeholder="Password"
             id="userPassword"
           />
+          {showPassword ? (
+            <IoEyeOffOutline
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="relative right-8 hover:cursor-pointer text-blue-200 text-2xl"
+            />
+          ) : (
+            <IoEyeOutline
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="relative right-8 hover:cursor-pointer text-blue-200 text-2xl"
+            />
+          )}
         </div>
         <div className="termsConditions">
           <input

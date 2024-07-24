@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 function LoginComponent() {
   let [isLoginPage, setIsLoginPage] = useOutletContext();
@@ -14,6 +15,7 @@ function LoginComponent() {
   // States used to store that the email or password is correct or not.
   let [isEmailCorrect, setIsEmailCorrect] = useState(true);
   let [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
+  let [showPassword, setShowPassword] = useState(false);
 
   // Email validation method
   let handleEmail = () => {
@@ -83,18 +85,29 @@ function LoginComponent() {
             placeholder="Email"
           />
         </div>
-        <div className="password">
+        <div className="password flex justify-center items-center">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={`border ${
               isPasswordCorrect ? "" : "border-red-600"
-            } bg-cyan-50 w-[80%] h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-1`}
+            } bg-cyan-50 w-[80%] ml-6 h-10 rounded-md pl-3 placeholder:text-lg outline-none text-cyan-800 text-lg my-1`}
             placeholder="Password"
             id="userPassword"
           />
+          {showPassword ? (
+            <IoEyeOffOutline
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="relative right-8 hover:cursor-pointer text-blue-200 text-2xl"
+            />
+          ) : (
+            <IoEyeOutline
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="relative right-8 hover:cursor-pointer text-blue-200 text-2xl"
+            />
+          )}
         </div>
         <div className="signInErrorMessage h-6">
           <span
